@@ -46,7 +46,7 @@ const games = [
         "Wreck of the Maria Doria",
         "Living Quarters",
         "The Deck",
-        "Tibetan Foothils",
+        "Tibetan Foothills",
         "Barkhang Monastery",
         "Catacombs of the Talion",
         "Ice Palace",
