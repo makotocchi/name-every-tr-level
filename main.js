@@ -288,9 +288,9 @@ function startGame() {
     levelNameInput.value = "";
     levelNameInput.focus();
 
-    const minutes = 5; // change this to affect how much time the game lasts
+    const minutes = 10; // change this to affect how much time the game lasts
     const timeStarted = new Date().getTime();
-    const targetTime = new Date(timeStarted + (minutes * 60 * 1000 + 1000)).getTime(); // 5 minutes later
+    const targetTime = new Date(timeStarted + (minutes * 60 * 1000 + 1000)).getTime(); // 10 minutes later
 
     const interval = setInterval(() => {
         const now = new Date().getTime();
@@ -316,7 +316,7 @@ function endGame() {
         endMessage.innerHTML = "Wow. You couldn't name even one?";
     } else if (counter <= 10) {
         endMessage.innerHTML = `You either have to play more TR games or type faster. You named ${counter} out of ${levelNames.length} levels.`;
-    } else if (counter <= 60) {
+    } else if (counter <= 80) {
         endMessage.innerHTML = `Not bad. You managed to name ${counter} out of ${levelNames.length} levels!`;
     } else {
         endMessage.innerHTML = `Congratulations! You managed to name ${counter} out of ${levelNames.length} levels!`;
@@ -350,7 +350,7 @@ function restartGame() {
     counter = 0;
     resetLevelNames();
 
-    document.getElementById("timer").innerHTML = "5:00";
+    document.getElementById("timer").innerHTML = "10:00";
     updateCounterText();
 
     const endModal = bootstrap.Modal.getOrCreateInstance(document.getElementById("endModal"));
