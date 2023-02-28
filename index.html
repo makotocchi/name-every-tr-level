@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Can you name every Tomb Raider level?</title>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="sticky-top bg-light border-bottom mb-3 pt-3">
+            <div class="row mb-3" id="inputDiv">
+                <label for="levelNameInput" class="form-label">Type the name of the level below. You can press enter to submit.</label>
+                <div class="input-group">
+                    <input class="form-control" onkeypress="checkLevelName(event.key)" type="text" id="levelNameInput">
+                    <button class="btn btn-primary" onclick="checkLevelName()" type="button" id="submitButton">Submit</button>
+                </div>
+                <div class="form-text text-danger" id="warning-text"></div>
+            </div>
+            <div class="row row-cols-2 my-3">
+                <div class="text-center">
+                    <span id="counter"></span>
+                </div>
+                <div class="text-center">
+                    <span id="timer">5:00</span>
+                </div>
+            </div>
+            <div class="d-none" id="restartDiv">
+                <div class="row text-center my-3">
+                    <div>
+                        <button class="btn btn-primary" onclick="restartGame()" type="button">Restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3"></div>
+    </div>
+
+    <div id="startModal" class="modal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Can you name every Tomb Raider level?</h5>
+                </div>
+                <div class="modal-body">
+                    <p>You have 5 minutes to name as many levels as you can from Tomb Raider I to Underworld.</p>
+                    <p>Some names show up in multiple games, so you get bonus points for each repetition.</p>
+                    <p><strong>Good luck!</strong></p>
+                    <span><small><em>Times Exclusive is not included. You don't have to type special characters.</em></small></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="startGame()">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="endModal" class="modal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Results</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="endMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="checkNames()">Check names</button>
+                    <button type="button" class="btn btn-primary" onclick="restartGame()">Try again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
