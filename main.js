@@ -152,7 +152,7 @@ const games = [
         "Deepsea Dive",
         "Sinking Submarine",
         "Gallows Tree",
-        "The Labyrinth",
+        "Labyrinth",
         "Old Mill",
         "The 13th Floor",
         "Escape with the Iris",
